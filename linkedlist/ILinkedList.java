@@ -100,9 +100,4 @@ public class ILinkedList implements IList {
         return currentNode.value;
     }
 
-    @Override
-    public int size() {
-        return size();
-    }
-
 }
