@@ -42,7 +42,7 @@ public class Hash {
     public void put(String key, String value) { //вставить в ключ свое значение
         int hash = hash(key);
         while (!keys[hash].equals("")) { //пока ключ не пустой
-            if (keys[hash].equals(key)) { //если ключ свопадает с ключом по хэшу
+            if (keys[hash].equals(key)) { //если ключ совпадает с ключом по хэшу
                 values[hash] = value; //хэш vals равен самому vals 
                 return;
             }
