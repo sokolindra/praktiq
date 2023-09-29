@@ -13,8 +13,8 @@ public class Hash {
         size = 0;
         keys = new String[TABLE_SIZE]; // Создать максимальное кол-во возможных ключей равных размеру хэш таблицы
         values = new String[TABLE_SIZE]; // Создать максимальное кол-во возможных значений равных тому же
-        Arrays.fill(keys, ""); //Заполнить ключи одинаковым значением
-        Arrays.fill(values, "");//Заполнить vals одинаковыми значениями
+        Arrays.fill(keys, ""); 
+        Arrays.fill(values, "");
     }
 
     public int getSize() {
@@ -27,7 +27,7 @@ public class Hash {
 
     public void clear() {
         size = 0;
-        Arrays.fill(keys, ""); //Очистить ключи хэщ таблицы
+        Arrays.fill(keys, ""); //Очистить ключи хэш таблицы
         Arrays.fill(values, ""); //Очистить значения хэш таблицы
     }
 
@@ -41,9 +41,9 @@ public class Hash {
 
     public void put(String key, String value) { //вставить в ключ свое значение
         int hash = hash(key);
-        while (!keys[hash].equals("")) { //пока ключ не пустой
-            if (keys[hash].equals(key)) { //если ключ совпадает с ключом по хэшу
-                values[hash] = value; //хэш vals равен самому vals 
+        while (!keys[hash].equals("")) { 
+            if (keys[hash].equals(key)) { 
+                values[hash] = value; 
                 return;
             }
             hash = (hash + 1) % TABLE_SIZE;
@@ -55,21 +55,21 @@ public class Hash {
 
     public String get(String key) { //получить значение по ключу
         int hash = hash(key);
-        while (!keys[hash].equals("")) { //Пока ключ совпадает с "" выполняется
-            if (keys[hash].equals(key)) //Если Преобразованный ключ совпадает с ключом в таблице
-                return values[hash]; // Возвращение значения к которому был присвоен ключ
-            hash = (hash + 1) % TABLE_SIZE; //остаток
+        while (!keys[hash].equals("")) { 
+            if (keys[hash].equals(key)) 
+                return values[hash]; 
+            hash = (hash + 1) % TABLE_SIZE; 
         }
         return null; //Если ключ и хэш не свопадают - null
     }
 
     public void remove(String key) { //Удаление элемента
         int hash = hash(key);
-        while (!keys[hash].equals("")) { //Пока хэш не равен null
-            if (keys[hash].equals(key)) { // Если хэш по ключу совпадает с введённым ключом
-                keys[hash] = ""; //Обнуление ключа
-                values[hash] = "";//Обнуление значения
-                size--; //Уменьшение размера таблицы
+        while (!keys[hash].equals("")) { 
+            if (keys[hash].equals(key)) {
+                keys[hash] = ""; 
+                values[hash] = "";
+                size--; 
                 return;
             }
             hash = (hash + 1) % TABLE_SIZE;
