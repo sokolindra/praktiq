@@ -31,7 +31,7 @@ public class Hash {
         Arrays.fill(values, ""); //Очистить значения хэш таблицы
     }
 
-    private int hash(String key) { //Преобразовать ключ в свой хэш
+    private int hash(String key) { 
         int hash = 0;
         for (int i = 0; i < key.length(); i++) {
             hash = (hash * 31 + key.charAt(i)) % TABLE_SIZE; // Формировать хэш по ключу
