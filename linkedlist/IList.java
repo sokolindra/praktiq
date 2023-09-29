@@ -13,5 +13,5 @@ public interface IList {
     void remove(Predicate<Integer> predicate);
 
     int get(int key);
-    int size ();
+
 }
