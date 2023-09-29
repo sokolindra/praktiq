@@ -19,8 +19,6 @@ public class Main {
         System.out.println(linkedList.get(2)); //Вывести элемент с ключом 2 (Замененный)
         System.out.println(linkedList.get(3)); //Вывести элемент с ключом 3
 
-
-        System.out.println(linkedList);
     }
 
 }
